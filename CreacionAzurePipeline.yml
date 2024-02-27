@@ -20,7 +20,7 @@ steps:
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az storage account create --name TestReport --resource-group GR-QA --location East US --sku Standard_LRS
+      az storage account create --name TestReport --resource-group GR-QA --location eastus --sku Standard_LRS
 
 - task: AzureCLI@2
   displayName: 'Obtener clave de acceso a la cuenta de almacenamiento'
