@@ -9,7 +9,7 @@ steps:
   displayName: 'Azure Login'
   inputs:
     azureSubscription: 'AzureResourceManager'
-    scriptType: 'pscore'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: 'az login'
 
@@ -17,7 +17,7 @@ steps:
   displayName: 'Crear cuenta de almacenamiento'
   inputs:
     azureSubscription: 'AzureResourceManager'
-    scriptType: 'pscore'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az storage account create --name TestReport --resource-group GR-QA --location East US --sku Standard_LRS
@@ -26,7 +26,7 @@ steps:
   displayName: 'Obtener clave de acceso a la cuenta de almacenamiento'
   inputs:
     azureSubscription: 'AzureResourceManager'
-    scriptType: 'pscore'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
       storageAccountKey=$(az storage account keys list --resource-group GR-QA --account-name TestReport --query '[0].value' --output tsv)
@@ -35,7 +35,7 @@ steps:
   displayName: 'Crear contenedor en la cuenta de almacenamiento'
   inputs:
     azureSubscription: 'AzureResourceManager'
-    scriptType: 'pscore'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az storage container create --name AppiumCucumberReport --account-name TestReport --account-key $storageAccountKey
