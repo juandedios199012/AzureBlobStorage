@@ -8,7 +8,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Azure Login'
   inputs:
-    azureSubscription: 'AzureSubscription'
+    azureSubscription: 'AzureResourceManager'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az login'
@@ -16,7 +16,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Crear cuenta de almacenamiento'
   inputs:
-    azureSubscription: 'AzureSubscription'
+    azureSubscription: 'AzureResourceManager'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -25,7 +25,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Obtener clave de acceso a la cuenta de almacenamiento'
   inputs:
-    azureSubscription: 'AzureSubscription'
+    azureSubscription: 'AzureResourceManager'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -34,7 +34,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Crear contenedor en la cuenta de almacenamiento'
   inputs:
-    azureSubscription: 'AzureSubscription'
+    azureSubscription: 'AzureResourceManager'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
