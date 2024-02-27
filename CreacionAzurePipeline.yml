@@ -11,7 +11,7 @@ steps:
     azureSubscription: 'AzureResourceManager'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az login --use-device-code'
+    inlineScript: 'az login --identity'
 
 - task: AzureCLI@2
   displayName: 'Crear cuenta de almacenamiento'
