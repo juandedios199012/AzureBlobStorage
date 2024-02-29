@@ -40,7 +40,7 @@ steps:
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az storage container create --name web --account-name appiumtestreport --account-key $(StorageAccountKey) --public-access blob
+      az storage container create --name '$web' --account-name appiumtestreport --account-key $(StorageAccountKey) --public-access blob
 
 - task: AzureCLI@2
   displayName: 'Habilitar el sitio estático en la cuenta de almacenamiento'
