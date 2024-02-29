@@ -22,7 +22,8 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       $storageAccountKey = az storage account keys list --resource-group GR-QA --account-name cucumbertestreport01 --query '[0].value' --output tsv
-
+      echo "##vso[task.setvariable variable=StorageAccountKey]$storageAccountKey"
+      
 - task: AzureCLI@2
   displayName: 'Habilitar acceso anónimo en la cuenta de almacenamiento'
   inputs:
