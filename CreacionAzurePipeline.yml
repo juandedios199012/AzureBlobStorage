@@ -5,15 +5,15 @@ pool:
   name: 'SelfHostedAgentPools'
 
 steps:
-
-- task: AzurePowerShell@5
+- task: AzureCLI@2
   displayName: 'Crear cuenta de almacenamiento'
   inputs:
     azureSubscription: 'AzureResourceManager'
-    ScriptType: 'InlineScript'
-    Inline: 'az storage account create --name appiumtestreport --resource-group GR-QA --location eastus --sku Standard_LRS'
-    azurePowerShellVersion: 'LatestVersion'
-    
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage account create --name appiumtestreport --resource-group GR-QA --location eastus --sku Standard_LRS
+
 - task: AzureCLI@2
   displayName: 'Obtener clave de acceso a la cuenta de almacenamiento'
   inputs:
