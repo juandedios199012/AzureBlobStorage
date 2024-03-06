@@ -6,20 +6,6 @@ pool:
 
 steps:
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'AzureResourceManager'
-    scriptType: 'ps'
-    scriptLocation: 'scriptPath'
-    scriptPath: 'inlineScrip'
-
-
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'AzureResourceManager'
-    ScriptType: 'InlineScript'
-    azurePowerShellVersion: 'LatestVersion'
-  
 - task: AzurePowerShell@5
   displayName: 'Crear cuenta de almacenamiento'
   inputs:
