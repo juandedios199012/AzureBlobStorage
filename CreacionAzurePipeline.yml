@@ -1,6 +1,9 @@
 trigger:
 - main
 
+pool:
+  name: 'Azure Pipelines'
+
 steps:
 - task: AzureCLI@2
   displayName: 'Crear cuenta de almacenamiento'
